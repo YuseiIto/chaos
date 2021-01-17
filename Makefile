@@ -1,6 +1,6 @@
 OBJECTS = start.o main.o
-LDFLAGS="-nostartfiles -nostdlib -nostdlib --build-id=none --gc-sections"
-CFLAGS="-fno-builtin -nostartfiles -std=c11"
+LDFLAGS=-nostartfiles -nostdlib -nostdlib --build-id=none --gc-sections
+CFLAGS=-fno-builtin -nostartfiles -std=c11
 
 # デフォルト動作
 default :

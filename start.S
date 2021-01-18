@@ -11,6 +11,7 @@ _start:
     b finish
 
 .section ".text"
+
 bss_clear:
     ldr x1, =__bss_start
     ldr x2, =__bss_end
@@ -22,6 +23,11 @@ bss_clear:
     add x1,x1,#4
     b 1b
 2:
+    ret
+
+.globl io_hlt
+io_hlt:
+    wfe
     ret
 
 finish:

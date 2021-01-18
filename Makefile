@@ -1,4 +1,4 @@
-OBJECTS = start.o main.o
+OBJECTS = start.o main.o uart.o
 LDFLAGS=-nostartfiles -nostdlib -nostdlib --build-id=none --gc-sections
 CFLAGS=-fno-builtin -nostartfiles -std=c11
 
@@ -17,6 +17,9 @@ kernel.elf : ldscript.ld $(OBJECTS) Makefile
 .c.o :
 	aarch64-none-elf-gcc $(CFLAGS) -c $<
 .S.o :
+	aarch64-none-elf-gcc $(CFLAGS) -c $<
+
+.h.o :
 	aarch64-none-elf-gcc $(CFLAGS) -c $<
 
 # コマンド

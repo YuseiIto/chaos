@@ -1,6 +1,6 @@
-OBJECTS = start.o main.o uart.o
+OBJECTS = start.o main.o uart.o isr_vector.o isr_handler.o
 LDFLAGS=-nostartfiles -nostdlib -nostdlib --build-id=none --gc-sections
-CFLAGS=-fno-builtin -nostartfiles -std=c11
+CFLAGS=-fno-builtin -nostartfiles -std=c11 -g
 
 # デフォルト動作
 default :

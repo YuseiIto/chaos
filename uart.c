@@ -38,4 +38,17 @@ volatile unsigned char uart_getc()
     return UART0->DR;
 }
 
-
+volatile void uart_putHex(uint32_t value,uint8_t column){
+    char buf[9];
+    char *p;
+    p = buf + sizeof(buf) - 1;
+    *(p--) = '\0';
+    if(!value&&!column)
+     column++;
+    while(value||column){
+        *(p--)="0123456789ABCDEF"[value & 0xf];
+        value>>=4;
+        if(column)column--;
+    }
+    uart_puts(p+1);
+}

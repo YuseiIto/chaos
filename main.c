@@ -26,6 +26,9 @@ void main(void)
 {
     system_init();
 
-    while (1)
-        uart_putc(uart_getc());
+    while (1){
+     volatile int i=0;
+        for(i=0;i<20000000;i++){}
+        uart_putHex((uint32_t)0x08,2);
+    }
 }

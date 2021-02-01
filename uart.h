@@ -11,6 +11,6 @@ volatile void uart_init();
 volatile void uart_putc(volatile unsigned char c);
 volatile void uart_puts(const char* str);
 volatile unsigned char uart_getc();
-
+volatile void uart_putHex(uint32_t value,uint8_t column);
 
 #endif
